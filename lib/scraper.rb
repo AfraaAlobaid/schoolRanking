@@ -1,4 +1,5 @@
 require 'nokogiri'
+require_relative './school.rb'
 
 class Scraper
     def initialize
@@ -10,10 +11,14 @@ class Scraper
     end
 
     def scrape_schools
-        puts get_page.css('table.table.table.table-striped.table-bordered.table-hover.dataTable.no-footer tr')
+        get_page.css('table.table.table.table-striped.table-bordered.table-hover.dataTable.no-footer tr')
     end
 
-    def 
+    def make_schools
+        scrape_schools.each_with_index do |r, index|
+            School.new_from_page(r) if(index > 0)
+        end
+    end
 end
 
-Scraper.new.scrape_schools
+Scraper.new.make_schools
