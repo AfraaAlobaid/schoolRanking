@@ -25,4 +25,8 @@ class School
             attr_array[9].text
         )
     end
+
+    def self.all
+        @@all
+    end
 end

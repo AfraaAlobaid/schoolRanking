@@ -2,8 +2,6 @@ require 'nokogiri'
 require_relative './school.rb'
 
 class Scraper
-    def initialize
-    end
 
     def get_page
         html = File.read('fixtures/Top_Primary_Schools_in_Adelaide_2020.html')
@@ -14,7 +12,7 @@ class Scraper
         get_page.css('table.table.table.table-striped.table-bordered.table-hover.dataTable.no-footer tr')
     end
 
-    def make_schools
+    def self.make_schools
         scrape_schools.each_with_index do |r, index|
             School.new_from_page(r) if(index > 0)
         end
