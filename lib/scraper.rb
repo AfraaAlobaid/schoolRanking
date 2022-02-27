@@ -3,12 +3,12 @@ require_relative './school.rb'
 
 class Scraper
 
-    def get_page
+    def self.get_page
         html = File.read('fixtures/Top_Primary_Schools_in_Adelaide_2020.html')
         Nokogiri::HTML(html)
     end
 
-    def scrape_schools
+    def self.scrape_schools
         get_page.css('table.table.table.table-striped.table-bordered.table-hover.dataTable.no-footer tr')
     end
 
@@ -19,4 +19,5 @@ class Scraper
     end
 end
 
-Scraper.new.make_schools
+Scraper.make_schools
+School.all.each {|school| puts school.sector}
