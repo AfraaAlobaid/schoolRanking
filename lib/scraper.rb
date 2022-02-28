@@ -19,5 +19,5 @@ class Scraper
     end
 end
 
-Scraper.make_schools
-School.all.each {|school| puts school.sector}
+# Scraper.make_schools
+# School.all.each {|school| puts school.sector}
