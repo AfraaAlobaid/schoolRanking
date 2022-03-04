@@ -1,5 +1,5 @@
-require_relative './scraper.rb'
-require_relative './school.rb'
+#require_relative './scraper.rb'
+#require_relative './school.rb'
 
 class CommandLine
 
@@ -69,4 +69,3 @@ class CommandLine
     end
 end
 
-CommandLine.new.call

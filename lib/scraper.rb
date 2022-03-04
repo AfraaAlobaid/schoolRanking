@@ -1,5 +1,5 @@
-require 'nokogiri'
-require_relative './school.rb'
+#require 'nokogiri'
+#require_relative './school.rb'
 
 class Scraper
 
